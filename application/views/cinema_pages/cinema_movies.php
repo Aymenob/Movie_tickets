@@ -14,7 +14,13 @@
     <!-- StyleSheets  -->
     <link rel="stylesheet" href=<?php echo base_url('assets/css/dashlite.css?ver=1.4.0');?> >
     <link id="skin-default" rel="stylesheet" href=<?php echo base_url('assets/css/theme.css?ver=1.4.0');?>>
-    <script>var base_url = '<?php echo base_url() ?>';</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>   
+    <script>var base_url = '<?php echo base_url() ?>';</script> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
 </head>
 
 <body class="nk-body bg-lighter npc-general has-sidebar ">
@@ -25,14 +31,14 @@
             <div class="nk-sidebar nk-sidebar-fixed is-dark " data-content="sidebarMenu">
                 <div class="nk-sidebar-element nk-sidebar-head">
                     <div class="nk-sidebar-brand">
-                        <a href=<?php echo base_url()?> class="logo-link nk-sidebar-logo">
-                            <img class="logo-light logo-img" src=<?php echo base_url("images/logo.png")?> srcset="./images/logo2x.png 2x" alt="logo">
+                        <a href=<?php echo base_url();?> class="logo-link nk-sidebar-logo">
+                        <img class="logo-light logo-img" src=<?php echo base_url("images/logo.png")?> srcset="./images/logo2x.png 2x" alt="logo">
                             <img class="logo-dark logo-img" src=<?php echo base_url("images/logo-dark.png")?> srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                             <span class="nio-version">General</span>
                         </a>
                     </div>
                     <div class="nk-menu-trigger mr-n2">
-                        <a href=<?php echo base_url()?> class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
+                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
                     </div>
                 </div><!-- .nk-sidebar-element -->
                 <div class="nk-sidebar-element">
@@ -48,7 +54,7 @@
                                     </a>
                                     <ul class="nk-menu-sub">
                                         <li class="nk-menu-item">
-                                            <a href=<?php echo base_url('Cinema_controller/login_page');?> href="html/general/pages/auths/auth-login.html" class="nk-menu-link" target="_blank"><span class="nk-menu-text">Login / Signin</span></a>
+                                            <a href=<?php echo base_url('Cinema_controller/login_page');?>lass="nk-menu-link" target="_blank"><span class="nk-menu-text">Login / Signin</span></a>
                                         </li>
                                         <li class="nk-menu-item">
                                             <a href=<?php echo base_url('Cinema_controller/register_page');?>  class="nk-menu-link" target="_blank"><span class="nk-menu-text">Register / Signup</span></a>
@@ -60,27 +66,7 @@
                                             <a href=<?php echo base_url('Cinema_controller/success_page');?>  class="nk-menu-link" target="_blank"><span class="nk-menu-text">Success / Confirm</span></a>
                                         </li>
                                     </ul><!-- .nk-menu-sub -->
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item has-sub">
-                                    <a href="#" class="nk-menu-link nk-menu-toggle">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-files"></em></span>
-                                        <span class="nk-menu-text">Projection</span>
-                                    </a>
-                                    <ul class="nk-menu-sub">
-                                        <?php foreach ($sales as $sale) {;?>
-                                        <li class="nk-menu-item">
-                                            <a href=<?php echo base_url('Cinema_controller/cinema_page/'.$sale['cinema_id']);?> target="_blank" class="nk-menu-link"><span class="nk-menu-text"><?php echo $sale['nom_cinema'];?> </span></a>
-                                        </li>
-                                        <?php };?>
-                                    </ul><!-- .nk-menu-sub -->
-                                
-                                <li class="nk-menu-item">
-                                    <a href="html/general/email-templates.html" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-text-rich"></em></span>
-                                        <span class="nk-menu-text">Email Template</span>
-                                    </a>
-                                </li>
-                            </ul><!-- .nk-menu -->
+                         
                         </div><!-- .nk-sidebar-menu -->
                     </div><!-- .nk-sidebar-content -->
                 </div><!-- .nk-sidebar-element -->
@@ -97,7 +83,8 @@
                             </div>
                             <div class="nk-header-brand d-xl-none">
                                 <a href="html/crypto/index.html" class="logo-link">
-s                                    <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                                    <img class="logo-light logo-img" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
+                                    <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                                     <span class="nio-version">General</span>
                                 </a>
                             </div><!-- .nk-header-brand -->
@@ -107,9 +94,9 @@ s                                    <img class="logo-dark logo-img" src="./imag
                                         <div class="nk-news-icon">
                                             <em class="icon ni ni-card-view"></em>
                                         </div>
-                                        <div class="nk-news">
-                                            <p>bienvenue dans votre site de référence préféré</p>
-                                            
+                                        <div class="nk-news-text">
+                                            <p>Do you know the latest update of 2019? <span> A overview of our is now available on YouTube</span></p>
+                                            <em class="icon ni ni-external"></em>
                                         </div>
                                     </a>
                                 </div>
@@ -124,7 +111,7 @@ s                                    <img class="logo-dark logo-img" src="./imag
                                                 </div>
                                                 <div class="user-info d-none d-md-block">
                                                     <div class="user-status">Administrator</div>
-                                                    <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                                    <div class="user-name dropdown-indicator">Ala</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -154,8 +141,8 @@ s                                    <img class="logo-dark logo-img" src="./imag
                                             </div>
                                         </div>
                                     </li><!-- .dropdown -->
-                                    <li class="dropdown notification-dropdown mr-n1">
-                                        <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-toggle="dropdown">
+                                    <li class="dropdown notification-dropdown">
+                                        <a href="#" class="dropdown-toggle nk-quick-nav-icon mr-lg-n1" data-toggle="dropdown">
                                             <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right dropdown-menu-s1">
@@ -226,6 +213,9 @@ s                                    <img class="logo-dark logo-img" src="./imag
                                             </div>
                                         </div>
                                     </li><!-- .dropdown -->
+                                    <li class="d-lg-none">
+                                        <a href="#" class="toggle nk-quick-nav-icon mr-n1" data-target="sideNav"><em class="icon ni ni-menu"></em></a>
+                                    </li>
                                 </ul><!-- .nk-quick-nav -->
                             </div><!-- .nk-header-tools -->
                         </div><!-- .nk-header-wrap -->
@@ -234,110 +224,45 @@ s                                    <img class="logo-dark logo-img" src="./imag
                 <!-- main header @e -->
                 <!-- content @s -->
                 <div class="nk-content ">
-                    <div class="container-fluid">
-                        <div class="nk-content-inner">
-                            <div class="nk-content-body">
-                                <div class="nk-block-head nk-block-head-sm">
-                                    <div class="nk-block-between">
-                                        <div class="nk-block-head-content">
-                                            
-                                        </div><!-- .nk-block-head-content -->
-                                      <!-- .nk-block-head-content -->
-                                    </div><!-- .nk-block-between -->
-                                </div><!-- .nk-block-head -->
-                                <div class="nk-block">
-                                    <div class="row g-gs">
-                                        
-                                        
-                                        <div class="col-xxl-8">
-                                            <div class="card card-bordered card-full">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group">
-                                                        <div class="card-title">
-                                                            <h6 class="title"><span class="mr-2">les films de la semaine</span> </h6>
-                                                        </div>
-                                                     
-                                                    </div>
+                    <div class="container wide-xl">
+                        <div class="nk-content-inner" style='margin-left:100px'>
+                             
+                         <div >
+                             <div >
+                                  </div>
+                                    </div><!-- .nk-block-head -->
+                                    <div class="nk-block"  style="width:15cm;margin-left:2cm">
+                                    <?php foreach ($films as $film) { ?>
+                                        <div class="support-topic-item card card-bordered" style='border : solid rgb(203, 195, 247) 2px'>
+                                            <a movie_id="<?php echo $film['date']?>" class="support-topic-block card-inner" href="javascript:void(0);">
+                                                <div class="support-topic-media">
+                                               <!-- <img style="height:3cm " src=<?php echo $film['image']?> >-->
                                                 </div>
-                                                <div class="card-inner p-0 border-top">
-                                                    <div class="nk-tb-list nk-tb-orders">
-                                                        <div class="nk-tb-item nk-tb-head">
-                                                            <div class="nk-tb-col" ><span>Nom du film</span></div>
-                                                            <div class="nk-tb-col tb-col-sm" style="text-align:center"><span>Affiche</span></div>
-                                                            <div class="nk-tb-col tb-col-md" style="text-align:center"><span>Année</span></div>
-                                                            <div class="nk-tb-col" style="text-align:center"><span>Description</span></div>
-                                                            <div class="nk-tb-col"><span>&nbsp;</span></div>
-                                                        </div>
-                                                        <?php foreach ($list as $Movie) { ?>
-                                                        <div class="nk-tb-item">
-                                                            <div class="nk-tb-col">
-                                                            <span class="tb-lead"><?php echo $Movie['titre'] ?></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-sm">
-                                                                <div class="user-card">
-                                                                    <div class="rounded-circle" style="width: 90px" >
-                                                                       <img style='height:5cm,width:5cm' src="<?php echo $Movie['image'];?>">
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                        
-                                                            <div class="nk-tb-col tb-col-md">
-                                                                <span class="tb-sub"><?php echo $Movie['année'] ?></span>
-                                                            </div>
-                                                            <div class="nk-tb-col tb-col-lg">
-                                                                <span class="tb-sub text-primary"><?php echo $Movie['description'] ?></span>
-                                                            </div>
-                                                           
-                                                          
-                                                            <div class="nk-tb-col nk-tb-col-action">
-                                                                <div class="dropdown">
-                                                                    <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu">
-                                                                        <ul class="link-list-plain">
-                                                                            <li><a href=<?php echo base_url("Cinema_controller/cinema_availability/".$Movie['film_id'] )?>>réserver</a></li>
-                                                                            <li><a href="#">ajouter aux favoris</a></li>
-                                                                            <li><a href="#">bande annonce</a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <?php } ?>
-                                                        
-                                                        
-                                                        
-                                                        
-                                                    </div>
+                                                <div class="support-topic-context">
+                                                    <h5 class="support-topic-title title">date de projection: <span style=''><?php echo  explode(" ", $film['date'] )[0];  ?></h5>
+                                                    <div class="support-topic-info">Horaire: <span style=''><?php echo  explode(" ", $film['date'] )[1];  ?></span></div>
+                                                    <div class="support-topic-count" >places disponible: <span style='color:#1ee0ac'><?php echo $film['place_disponible'] ?></span></div>
                                                 </div>
-                                              
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                     
-                                    </div><!-- .row -->
-                                </div><!-- .nk-block -->
+                                                <div class="support-topic-action">
+                                                    <em class="icon ni ni-chevron-right"></em>
+                                                </div>
+                                            </a>
+                                        </div><!-- .support-topic-item -->
+                                        <?php } ?>
+                                        
+                                
+                                <!-- footer @s -->
+                                <div class="nk-footer">
+                                    <div class="container wide-xl">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- footer @e -->
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- content @e -->
-                <!-- footer @s -->
-                <div class="nk-footer">
-                    <div class="container-fluid">
-                        <div class="nk-footer-wrap">
-                            <div class="nk-footer-copyright"> &copy; 2020 DashLite. Template by <a href="#">Softnio</a>
-                            </div>
-                            <div class="nk-footer-links">
-                                <ul class="nav nav-sm">
-                                    <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- footer @e -->
             </div>
             <!-- wrap @e -->
         </div>
@@ -345,11 +270,99 @@ s                                    <img class="logo-dark logo-img" src="./imag
     </div>
     <!-- app-root @e -->
     <!-- JavaScript -->
+    <!--  Modal for add -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="min-width:18cm">
+      <div class="">
+       
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      <form id="addForm" >
+      <div class="container"><br/>
+    <h2 style="text-align:center;color:purple">Votre Reservation</h2>
+    <hr/>
+    <div class="row" style="width:18cm">
+        <div class="col-md-4" >
+            <h4>Film</h4>
+            <div class="row">
+            
+                <div class="col-md-4" >
+                    <div class="thumbnail" style="width:5cm">
+                        <img id="image" width="200" >
+                        <div class="caption">
+                            
+                            <div class="row" style="margin-left:0.5cm">
+                            <tbody  >
+                    Nombre de ticket :
+                </tbody>
+                                <div class="col-md-5" >
+                                    <input style="width:2cm;margin-bottom:0.2cm" type="number" name="quantity" id="" value="1" class="quantity form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                 
+            </div>
  
-    <script src="./assets/js/charts/gd-general.js?ver=1.4.0"></script>
-    <script src=<?php echo base_url('assets/js/bundle.js?ver=1.4.0');?> ></script>
-    <script src=<?php echo base_url('assets/js/scripts.js?ver=1.4.0');?> ></script>
-    <script src=<?php echo base_url('assets/js/charts/gd-general.js?ver=1.4.0');?> ></script>
+        </div>
+        <div class="col-md-4">
+            <h4>Details :</h4>
+            <table class="table table-striped" style="width:10cm" >
+                <thead >
+                    <tr >
+                         <th style='color:grey' >Date</th>
+                    </tr>
+                </thead>
+                <tr >
+                        <th id="Date"></th>
+                </tr>
+                    <thead >
+                    <tr >
+                       <th style='color:grey'>Cinema</th>
+                     </tr>
+                </thead>
+                <tr >
+                    <th id="Cinema"></th>
+                </tr>
+                <thead >
+                    <tr >
+                       <th style='color:grey'>Prix ticket</th>
+                     </tr>
+                </thead>
+                <tr >
+                    <th  id="Prix_ticket"></th>
+                </tr>
+                
+        </table>
+        <tbody  >
+        <tr>
+           <h4 style="text-align:center" > Total :<span style="color:#1ee0ac;font-size:25px" id="Total"><span></h4>
+        </tr>
+                 
+                   
+                </tbody>
+        </div>
+    </div>
+</div>
+ 
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success"  id="butsave">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="<?php echo base_url();?>assets/js/cinema.js"></script> 
+    <script src="./assets/js/bundle.js?ver=1.4.0"></script>
+    <script src="./assets/js/scripts.js?ver=1.4.0"></script>
 </body>
 
 </html>

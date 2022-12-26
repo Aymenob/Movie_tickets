@@ -14,7 +14,13 @@
     <!-- StyleSheets  -->
     <link rel="stylesheet" href=<?php echo base_url('assets/css/dashlite.css?ver=1.4.0');?> >
     <link id="skin-default" rel="stylesheet" href=<?php echo base_url('assets/css/theme.css?ver=1.4.0');?>>
-    <script>var base_url = '<?php echo base_url() ?>';</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>   
+    <script>var base_url = '<?php echo base_url() ?>';</script> 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    
 </head>
 
 <body class="nk-body bg-lighter npc-general has-sidebar ">
@@ -48,16 +54,16 @@
                                     </a>
                                     <ul class="nk-menu-sub">
                                         <li class="nk-menu-item">
-                                            <a href=<?php echo base_url('Cinema_controller/login_page');?> href="html/general/pages/auths/auth-login.html" class="nk-menu-link" target="_blank"><span class="nk-menu-text">Login / Signin</span></a>
+                                            <a href=<?php echo base_url('Client_controller/login_page');?> href="html/general/pages/auths/auth-login.html" class="nk-menu-link" target="_blank"><span class="nk-menu-text">Login / Signin</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href=<?php echo base_url('Cinema_controller/register_page');?>  class="nk-menu-link" target="_blank"><span class="nk-menu-text">Register / Signup</span></a>
+                                            <a href=<?php echo base_url('Client_controller/register_page');?>  class="nk-menu-link" target="_blank"><span class="nk-menu-text">Register / Signup</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href=<?php echo base_url('Cinema_controller/forgotP_page');?>  class="nk-menu-link" target="_blank"><span class="nk-menu-text">Forgot Password</span></a>
+                                            <a href=<?php echo base_url('Client_controller/forgotP_page');?>  class="nk-menu-link" target="_blank"><span class="nk-menu-text">Forgot Password</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href=<?php echo base_url('Cinema_controller/success_page');?>  class="nk-menu-link" target="_blank"><span class="nk-menu-text">Success / Confirm</span></a>
+                                            <a href=<?php echo base_url('Client_controller/success_page');?>  class="nk-menu-link" target="_blank"><span class="nk-menu-text">Success / Confirm</span></a>
                                         </li>
                                     </ul><!-- .nk-menu-sub -->
                                 </li><!-- .nk-menu-item -->
@@ -123,8 +129,8 @@ s                                    <img class="logo-dark logo-img" src="./imag
                                                     <em class="icon ni ni-user-alt"></em>
                                                 </div>
                                                 <div class="user-info d-none d-md-block">
-                                                    <div class="user-status">Administrator</div>
-                                                    <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                                    <div class="user-status">Account </div>
+                                                    <div class="user-name dropdown-indicator"><?php if ($this->session->userdata('login') === 'true') {echo $session['identifiant']; }?></div>
                                                 </div>
                                             </div>
                                         </a>
@@ -135,8 +141,8 @@ s                                    <img class="logo-dark logo-img" src="./imag
                                                         <span>AB</span>
                                                     </div>
                                                     <div class="user-info">
-                                                        <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                        <span class="sub-text">info@softnio.com</span>
+                                                        <span class="lead-text"><?php if ($this->session->userdata('login') === 'true') {echo $session['identifiant']; }?></span>
+                                                        <span class="sub-text"><?php if ($this->session->userdata('login') === 'true') {echo $session['email']; }?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -149,7 +155,7 @@ s                                    <img class="logo-dark logo-img" src="./imag
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                    <li><a type="button" id="sign-out"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -345,7 +351,7 @@ s                                    <img class="logo-dark logo-img" src="./imag
     </div>
     <!-- app-root @e -->
     <!-- JavaScript -->
- 
+    <script src="<?php echo base_url();?>assets/js/Client.js"></script>
     <script src="./assets/js/charts/gd-general.js?ver=1.4.0"></script>
     <script src=<?php echo base_url('assets/js/bundle.js?ver=1.4.0');?> ></script>
     <script src=<?php echo base_url('assets/js/scripts.js?ver=1.4.0');?> ></script>
